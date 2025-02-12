@@ -1,0 +1,2 @@
+1. this project is using nextjs v15 (with app-router) with tailwindcss + shadcn ui 
+2. instead of npm, i am using bun
