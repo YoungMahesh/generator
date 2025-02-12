@@ -44,7 +44,7 @@ export default function HomePage() {
           </h1>
           <Form {...form}>
             <form
-              onSubmit={form.handleSubmit((data) => {
+              onSubmit={form.handleSubmit((_) => {
                 const yamlContent = `services:\n  db:\n    image: ${databaseType === "mysql" ? "mysql:9.2.0" : "postgres:latest"}\n    restart: ${restartPolicy}\n    environment:\n      ${databaseType === "mysql" ? "MYSQL_ROOT_PASSWORD" : "POSTGRES_PASSWORD"}: ${rootPassword}\n      ${databaseType === "mysql" ? "MYSQL_DATABASE" : "POSTGRES_DB"}: ${dbName}\n    ports:\n      - ${databaseType === "mysql" ? "3306:3306" : "5432:5432"}`;
                 setGeneratedYaml(yamlContent);
               })}

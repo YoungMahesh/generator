@@ -15,11 +15,10 @@ export function useCopyToClipboard() {
       
       // Reset copied state after 2 seconds
       setTimeout(() => setIsCopied(false), 2000)
-    } catch (err) {
-      toast.error('Failed to copy text', {
-        duration: 2000,
-        position: 'top-right'
-      })
+    } catch {
+      toast.error("Failed to copy", {
+        description: "Could not copy to clipboard",
+      });
       setIsCopied(false)
     }
   }
